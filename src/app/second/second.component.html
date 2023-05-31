@@ -1,0 +1,20 @@
+<h3>second works!</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr (click)="list(s.id)" *ngFor="let s of getseconddata">
+            <td>{{s.tname}}</td>
+            <td>{{s.tage}}</td>
+            <td>{{s.tgender}}</td>
+            <td>{{s.tmessage}}</td>
+        </tr>
+    </tbody>
+</table>

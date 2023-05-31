@@ -1,0 +1,48 @@
+<h3>first works!</h3>
+<div>
+    <p>Enter your Regno</p>
+    <input type="text" name="regno" [(ngModel)]="regno">
+</div>
+<div>
+    <p>Enter your name</p>
+    <input type="text" name="uname" [(ngModel)]="uname">
+</div>
+<div>
+    <p>Enter your age</p>
+    <input type="text" name="age" [(ngModel)]="age">
+</div>
+<div>
+    <p>Enter your gender</p>
+    <input type="text" name="gender" [(ngModel)]="gender">
+</div>
+<div>
+    <button (click)="insert(regno,uname,age,gender)">ADD</button>
+    <button (click)="update()">Submit</button>
+</div>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>regno</th>
+            <th>uname</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let f of getfirstdata">
+            <td>{{f.regno}}</td>
+            <td>{{f.uname}}</td>
+            <td>{{f.age}}</td>
+            <td>{{f.gender}}</td>
+            <td>
+                <button (click)="list(f.id)">view</button>
+                <button (click)="edit(f.id)">Edit</button>
+                <button (click)="deleteData(f.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
