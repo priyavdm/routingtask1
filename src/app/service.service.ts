@@ -33,6 +33,6 @@ export class ServiceService {
     return this.http.get(this.url+ '/edit/'+id)
   }
   firstupdate(updatebody:any){
-    return this.http.put(this.url+ '/update',{updatebody})
+    return this.http.put(this.url+ '/update',updatebody)
   }
 }

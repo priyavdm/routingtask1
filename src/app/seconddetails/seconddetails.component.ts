@@ -8,6 +8,9 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./seconddetails.component.scss']
 })
 export class SeconddetailsComponent implements OnInit{
+  // ngOnInit(): void {
+  //   // throw new Error('Method not implemented.');
+  // }
 
   getseconddata:any;
 

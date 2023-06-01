@@ -10,11 +10,11 @@ import { Router } from "@angular/router";
 export class FirstComponent implements OnInit{
 
   getfirstdata:any;
-  id:any='';
-  regno:any='';
-  uname:any='';
-  age:any='';
-  gender:any='';
+  id:any;
+  regno:any;
+  uname:any;
+  age:any;
+  gender:any;
 
   constructor(public service:ServiceService, private router:Router){}
   ngOnInit(): void {
@@ -24,8 +24,7 @@ export class FirstComponent implements OnInit{
 
   getfirst(){
     this.service.getfirst().subscribe((data)=>{
-      console.log(data);
-      
+      console.log(data);      
       this.getfirstdata=data;
     })
   }
@@ -51,12 +50,11 @@ export class FirstComponent implements OnInit{
   edit(id:number){
     console.log(id);
     this.service.firstedit(id).subscribe((data:any)=>{
-      this.id=id;
+      this.id=data[0].id;
       this.regno=data[0].regno;
       this.uname=data[0].uname;
       this.age=data[0].age;
       this.gender=data[0].gender;
-
     })
   }
 
@@ -68,14 +66,19 @@ export class FirstComponent implements OnInit{
       age:this.age,
       gender:this.gender
     }
+    console.log(updatebody);
+    
     this.service.firstupdate(updatebody).subscribe((data)=>{
       this.getfirst()
       this.regno='';
       this.uname='';
       this.age='';
       this.gender='';
-
+      
+      
     })
+    // console.log(updatebody);
+    
   }
  
    
